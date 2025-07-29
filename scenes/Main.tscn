@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=4 uid="uid://cicee1d5uwc6p"]
 
-[ext_resource type="SpriteFrames" uid="uid://bg0dguhbq33in" path="res://scenes/player_idle.tres" id="2_0bbpv"]
+[ext_resource type="SpriteFrames" uid="uid://bg0dguhbq33in" path="res://assets/animation/player_idle.tres" id="2_0bbpv"]
 [ext_resource type="Script" uid="uid://bpjyb8i1ruryd" path="res://scripts/player.gd" id="2_rvslj"]
-[ext_resource type="TileSet" uid="uid://cbn2yvjdmo7jl" path="res://scenes/background_tileset.tres" id="3_0bbpv"]
+[ext_resource type="TileSet" uid="uid://cbn2yvjdmo7jl" path="res://assets/tileset/background_tileset.tres" id="3_0bbpv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rarhs"]
 radius = 9.0
@@ -18,7 +18,7 @@ position = Vector2(-5, -66)
 sprite_frames = ExtResource("2_0bbpv")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.379254
+frame_progress = 0.333897
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-5, -56)
