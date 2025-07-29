@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://cicee1d5uwc6p"]
+[gd_scene load_steps=5 format=4 uid="uid://cicee1d5uwc6p"]
+
+[ext_resource type="SpriteFrames" uid="uid://bg0dguhbq33in" path="res://scenes/player_idle.tres" id="2_0bbpv"]
+[ext_resource type="Script" uid="uid://bpjyb8i1ruryd" path="res://scripts/player.gd" id="2_rvslj"]
+[ext_resource type="TileSet" uid="uid://cbn2yvjdmo7jl" path="res://scenes/background_tileset.tres" id="3_0bbpv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rarhs"]
+radius = 9.0
 
 [node name="Main" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(36, 29)
+script = ExtResource("2_rvslj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-5, -66)
+sprite_frames = ExtResource("2_0bbpv")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.379254
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-5, -56)
+shape = SubResource("CircleShape2D_rarhs")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-4, -63)
+zoom = Vector2(4, 4)
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Layer0" type="TileMapLayer" parent="Tiles"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAIAAAD+/wAAAAABAAIAAAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAAHAAAAAAABAAIAAAD9/wEAAAAAAAMAAAD+/wEAAAABAAMAAAD//wEAAAABAAMAAAAAAAEAAAABAAMAAAABAAEAAAABAAMAAAACAAEAAAABAAMAAAADAAEAAAABAAMAAAAEAAEAAAABAAMAAAAFAAEAAAABAAMAAAAGAAEAAAABAAMAAAAHAAEAAAABAAMAAAAIAAAAAAACAAIAAAAIAAEAAAACAAMAAAAOAP7/AAACAAAAAAANAP7/AAABAAAAAAAMAP7/AAABAAAAAAALAP7/AAABAAAAAAAKAP7/AAAAAAAAAAA=")
+tile_set = ExtResource("3_0bbpv")
