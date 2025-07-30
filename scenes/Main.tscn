@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://cicee1d5uwc6p"]
+[gd_scene load_steps=6 format=4 uid="uid://cicee1d5uwc6p"]
 
 [ext_resource type="SpriteFrames" uid="uid://bg0dguhbq33in" path="res://assets/animation/player_idle.tres" id="2_0bbpv"]
 [ext_resource type="Script" uid="uid://bpjyb8i1ruryd" path="res://scripts/player.gd" id="2_rvslj"]
 [ext_resource type="TileSet" uid="uid://cbn2yvjdmo7jl" path="res://assets/tileset/background_tileset.tres" id="3_0bbpv"]
 [ext_resource type="Script" uid="uid://cyu74vj3dkf2b" path="res://scenes/audio_manager.gd" id="4_rarhs"]
-[ext_resource type="PackedScene" uid="uid://hnvr0n6kc5b2" path="res://ui/scenes/settings.tscn" id="5_vcsgt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rarhs"]
 radius = 9.0
@@ -42,5 +41,3 @@ tile_set = ExtResource("3_0bbpv")
 script = ExtResource("4_rarhs")
 
 [node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Settings" parent="UI" instance=ExtResource("5_vcsgt")]
