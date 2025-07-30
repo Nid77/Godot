@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://hnvr0n6kc5b2"]
+
+[ext_resource type="Script" uid="uid://c8p5awrshc60f" path="res://ui/script/settings.gd" id="1_5p8wc"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+
+[node name="MusicScrollBar" type="HScrollBar" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 153.0
+offset_right = 199.0
+offset_bottom = 184.0
+min_value = -30.0
+max_value = 0.0
+step = 1.0
+page = 1.0
+value = -15.0
+
+[node name="SfxScrollBar" type="HScrollBar" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 90.0
+offset_right = 200.0
+offset_bottom = 118.0
+min_value = -30.0
+max_value = 0.0
+step = 1.0
+page = 1.0
+value = -15.0

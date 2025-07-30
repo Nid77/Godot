@@ -15,6 +15,11 @@ run/main_scene="uid://cicee1d5uwc6p"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Music="*res://scenes/music.tscn"
+AudioManager="*res://scenes/audio_manager.gd"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

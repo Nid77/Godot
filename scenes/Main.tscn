@@ -1,32 +1,35 @@
-[gd_scene load_steps=5 format=4 uid="uid://cicee1d5uwc6p"]
+[gd_scene load_steps=7 format=4 uid="uid://cicee1d5uwc6p"]
 
 [ext_resource type="SpriteFrames" uid="uid://bg0dguhbq33in" path="res://assets/animation/player_idle.tres" id="2_0bbpv"]
 [ext_resource type="Script" uid="uid://bpjyb8i1ruryd" path="res://scripts/player.gd" id="2_rvslj"]
 [ext_resource type="TileSet" uid="uid://cbn2yvjdmo7jl" path="res://assets/tileset/background_tileset.tres" id="3_0bbpv"]
+[ext_resource type="Script" uid="uid://cyu74vj3dkf2b" path="res://scenes/audio_manager.gd" id="4_rarhs"]
+[ext_resource type="PackedScene" uid="uid://hnvr0n6kc5b2" path="res://ui/scenes/settings.tscn" id="5_vcsgt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rarhs"]
 radius = 9.0
 
 [node name="Main" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(36, 29)
 script = ExtResource("2_rvslj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-5, -66)
 sprite_frames = ExtResource("2_0bbpv")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.333897
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-5, -56)
 shape = SubResource("CircleShape2D_rarhs")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-4, -63)
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -34,3 +37,10 @@ zoom = Vector2(4, 4)
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD9/wAAAAAAAAIAAAD+/wAAAAABAAIAAAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAAHAAAAAAABAAIAAAD9/wEAAAAAAAMAAAD+/wEAAAABAAMAAAD//wEAAAABAAMAAAAAAAEAAAABAAMAAAABAAEAAAABAAMAAAACAAEAAAABAAMAAAADAAEAAAABAAMAAAAEAAEAAAABAAMAAAAFAAEAAAABAAMAAAAGAAEAAAABAAMAAAAHAAEAAAABAAMAAAAIAAAAAAACAAIAAAAIAAEAAAACAAMAAAAOAP7/AAACAAAAAAANAP7/AAABAAAAAAAMAP7/AAABAAAAAAALAP7/AAABAAAAAAAKAP7/AAAAAAAAAAA=")
 tile_set = ExtResource("3_0bbpv")
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("4_rarhs")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Settings" parent="UI" instance=ExtResource("5_vcsgt")]
